@@ -1,0 +1,25 @@
+# ЗАПАСНОЙ вариант. Положи как .github/workflows/build.yml только если нет своего рабочего.
+# Шага с QR здесь нет - используй свой build.yml, он останется рабочим.
+name: build
+on:
+  workflow_dispatch:
+  push:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g @zeppos/zeus-cli
+      - run: zeus build
+      - run: |
+          mkdir -p site
+          cp dist/*.zab site/
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

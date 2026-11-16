@@ -1,0 +1,46 @@
+{
+  "configVersion": "v3",
+  "app": {
+    "appId": 2611161,
+    "appName": "ScreenCalib",
+    "appType": "app",
+    "version": {
+      "code": 1,
+      "name": "1.0.0"
+    },
+    "icon": "icon.png",
+    "vender": "u613",
+    "description": "Screen area calibration"
+  },
+  "permissions": [],
+  "runtime": {
+    "apiVersion": {
+      "compatible": "3.0",
+      "target": "3.0",
+      "minVersion": "3.0"
+    }
+  },
+  "targets": {
+    "default": {
+      "module": {
+        "page": {
+          "pages": [
+            "page/index"
+          ]
+        }
+      },
+      "platforms": [
+        {
+          "st": "s"
+        }
+      ],
+      "designWidth": 432
+    }
+  },
+  "i18n": {
+    "en-US": {
+      "appName": "ScreenCalib"
+    }
+  },
+  "defaultLanguage": "en-US"
+}
